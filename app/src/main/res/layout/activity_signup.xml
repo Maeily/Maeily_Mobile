@@ -6,12 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".SignupActivity">
 
-    <!--이름, 이메일(아이디겸 학교이메일), 비밀번호, 기수-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="127dp"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/sign_up_cp_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -45,6 +50,7 @@
             android:padding="15dp">
 
             <TextView
+                android:id="@+id/sign_up_email_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이메일 :"
@@ -54,6 +60,7 @@
             </TextView>
 
             <EditText
+                android:id="@+id/sign_up_email_et"
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:hint="이메일을 입력해주세요."
@@ -70,6 +77,7 @@
             android:padding="15dp">
 
             <TextView
+                android:id="@+id/sign_up_pw_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="비밀번호 :"
@@ -79,6 +87,7 @@
             </TextView>
 
             <EditText
+                android:id="@+id/sign_up_pw_et"
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:hint="비밀번호를 입력해주세요."
@@ -95,6 +104,7 @@
             android:padding="15dp">
 
             <TextView
+                android:id="@+id/sign_up_grade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="기수"
@@ -104,8 +114,9 @@
             </TextView>
 
             <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="340dp"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:hint="기수를 선택해주세요."
                 android:textSize="24sp">
 
@@ -114,5 +125,17 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/sign_up_cp_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center"
+        android:text="회원가입"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="12dp">
+
+    </Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
