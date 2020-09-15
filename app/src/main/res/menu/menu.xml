@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/searchItem"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="Search" />
+        android:id="@+id/ScheduleItem"
+        android:icon="@drawable/baseline_calendar_today_black_24dp"
+        android:title="Schedule" />
     <item
-        android:id="@+id/cameraItem"
-        android:icon="@android:drawable/ic_menu_camera"
-        android:title="Camera" />
+        android:id="@+id/HomeItem"
+        android:icon="@drawable/baseline_home_black_24dp"
+        android:title="Home" />
     <item
-        android:id="@+id/callItem"
-        android:icon="@android:drawable/ic_menu_call"
-        android:title="Call" />
+        android:id="@+id/ProfileItem"
+        android:icon="@drawable/baseline_account_box_black_24dp"
+        android:title="Profile" />
 </menu>
