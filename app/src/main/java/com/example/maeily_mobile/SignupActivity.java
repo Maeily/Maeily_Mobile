@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class SignupActivity extends AppCompatActivity {
+    Button button;
 
     private Spinner spinner;
     ArrayList<String> arrayList;
@@ -32,5 +35,14 @@ public class SignupActivity extends AppCompatActivity {
                 arrayList);
         spinner = (Spinner)findViewById(R.id.spinner);
         spinner.setAdapter(arrayAdapter);
+
+        button = findViewById(R.id.sign_up_cp_btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "회원가입되었습니다.", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
 }

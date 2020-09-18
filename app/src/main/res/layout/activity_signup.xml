@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="90dp"
         android:layout_marginBottom="127dp"
         android:orientation="vertical"
         android:padding="20dp"
@@ -28,7 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이름 :"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 android:textStyle="bold">
 
             </TextView>
@@ -37,7 +37,7 @@
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:hint="이름을 입력해주세요."
-                android:textSize="24sp">
+                android:textSize="20sp">
 
             </EditText>
 
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이메일 :"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 android:textStyle="bold">
 
             </TextView>
@@ -64,7 +64,7 @@
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:hint="이메일을 입력해주세요."
-                android:textSize="24sp">
+                android:textSize="20sp">
 
             </EditText>
 
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="비밀번호 :"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 android:textStyle="bold">
 
             </TextView>
@@ -91,7 +91,7 @@
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:hint="비밀번호를 입력해주세요."
-                android:textSize="24sp">
+                android:textSize="20sp">
 
             </EditText>
 
@@ -108,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="기수"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 android:textStyle="bold">
 
             </TextView>
@@ -118,7 +118,7 @@
                 android:layout_width="340dp"
                 android:layout_height="35dp"
                 android:hint="기수를 선택해주세요."
-                android:textSize="24sp">
+                android:textSize="20sp">
 
             </Spinner>
 
@@ -132,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|center"
         android:text="회원가입"
-        android:textSize="32sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="12dp">
 
