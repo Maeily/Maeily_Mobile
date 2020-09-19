@@ -25,12 +25,11 @@ public class FragmentSchedule extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                FragmentAdd fragmentadd = new FragmentAdd();
-                transaction.replace(R.id.frameLayout, fragmentadd);
+                AddFragment Addfragment = new AddFragment();
+                transaction.replace(R.id.frameLayout, Addfragment);
                 transaction.commit();
             }
         });
-
         return view;
     }
 }
