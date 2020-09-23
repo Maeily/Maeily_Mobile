@@ -1,4 +1,4 @@
-package com.example.maeily_mobile;
+package com.example.maeily_mobile.sign_up;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.maeily_mobile.R;
 
 import java.util.ArrayList;
 
@@ -33,7 +35,7 @@ public class SignupActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<>(getApplicationContext(),
                 android.R.layout.simple_spinner_dropdown_item,
                 arrayList);
-        spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = findViewById(R.id.spinner);
         spinner.setAdapter(arrayAdapter);
 
         button = findViewById(R.id.sign_up_cp_btn);

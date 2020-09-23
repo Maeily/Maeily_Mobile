@@ -1,13 +1,15 @@
-package com.example.maeily_mobile;
+package com.example.maeily_mobile.sign_up;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.maeily_mobile.fragment.MenuActivity;
+import com.example.maeily_mobile.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.maeily_mobile;
+package com.example.maeily_mobile.fragment;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,9 +7,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
+import com.example.maeily_mobile.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuActivity extends AppCompatActivity {
@@ -28,24 +27,24 @@ public class MenuActivity extends AppCompatActivity {
         transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationView);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelctedListener());
+        bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
 
     }
 
-    private class ItemSelctedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
+    private class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
             FragmentTransaction transaction = fragmentManager.beginTransaction();
 
             switch (menuItem.getItemId()){
                 case R.id.ScheduleItem:
-                    transaction.replace(R.id.frameLayout, fragmentSchedule).commitAllowingStateLoss();
+                    transaction.replace(R.id.frameLayout, fragmentSchedule).commitNow();
                     break;
                 case R.id.HomeItem:
-                    transaction.replace(R.id.frameLayout, fragmentHome).commitAllowingStateLoss();
+                    transaction.replace(R.id.frameLayout, fragmentHome).commitNow();
                     break;
                 case R.id.ProfileItem:
-                    transaction.replace(R.id.frameLayout, fragmentProfile).commitAllowingStateLoss();
+                    transaction.replace(R.id.frameLayout, fragmentProfile).commitNow();
                     break;
             }
             return true;

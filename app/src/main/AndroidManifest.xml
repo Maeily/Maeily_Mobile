@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".sign_up.SignupActivity" />
+        <activity android:name=".fragment.MenuActivity" />
+        <activity android:name=".sign_up.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
