@@ -14,9 +14,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MenuActivity extends AppCompatActivity {
 
     private FragmentManager fragmentManager = getSupportFragmentManager();
-    private FragmentHome fragmentHome = new FragmentHome();
-    private FragmentProfile fragmentProfile = new FragmentProfile();
-    private FragmentSchedule fragmentSchedule = new FragmentSchedule();
+    private HomeFragment fragmentHome = new HomeFragment();
+    private ProfileFragment fragmentProfile = new ProfileFragment();
+    private ScheduleFragment fragmentSchedule = new ScheduleFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

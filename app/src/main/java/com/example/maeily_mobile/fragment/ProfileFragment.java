@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.maeily_mobile.R;
 
-public class FragmentProfile extends Fragment {
+public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
 

@@ -9,50 +9,43 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
+    String title[], content[];
+    Context context;
 
-class MainViewAdapter extends RecyclerView.Adapter<MainViewAdapter.Holder> {
-
-    private Context context;
-    private List<MainViewAdapter> list = new ArrayList<>();
-    private char title;
-    private char content;
-
-    public MainViewAdapter(Context context, List<MainViewAdapter> list) {
-        this.context = context;
-        this.list = list;
+    public Adapter(Context ct, String s1[], String s2[]){
+        context = ct;
+        title = s1;
+        content = s2;
     }
 
     @NonNull
     @Override
-    public MainViewAdapter.Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerviewitem, parent, false);
-        Holder holder = new Holder(view);
-        return holder;
-
+    public Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View view = inflater.inflate(R.layout.recyclerviewitem,parent,false);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MainViewAdapter.Holder holder, int position) {
-        int itemposition = position;
-        holder.titleText.setText(list.get(itemposition).title);
-        holder.contentText.setText(list.get(itemposition).content);
+    public void onBindViewHolder(@NonNull Adapter.MyViewHolder holder, int position) {
+        holder.channel_title_rcv.setText(title[position]);
+        holder.channel_content_rcv.setText(title[position]);
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return title.length;
     }
 
-    public class Holder extends RecyclerView.ViewHolder{
-        public TextView titleText;
-        public TextView contentText;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public Holder(View view) {
-            super(view);
-            titleText = view.findViewById(R.id.channel_title_rcv);
-            titleText = view.findViewById(R.id.channel_content_rcv);
+        TextView channel_title_rcv;
+        TextView channel_content_rcv;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            channel_title_rcv = itemView.findViewById(R.id.channel_title_rcv);
+            channel_content_rcv = itemView.findViewById(R.id.channel_content_rcv);
         }
     }
 }

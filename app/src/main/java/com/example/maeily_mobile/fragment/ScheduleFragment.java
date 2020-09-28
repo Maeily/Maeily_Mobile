@@ -12,18 +12,21 @@ import android.se.omapi.Channel;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.Button;
 
 import com.example.maeily_mobile.R;
 
 import java.util.ArrayList;
 
-public class FragmentSchedule extends Fragment {
+public class ScheduleFragment extends Fragment {
 
     ArrayList<Channel> channelsList = new ArrayList<>();
     View view;
     Button add_schedule;
     RecyclerView recyclerView;
+    Adapter adapter;
+    RecyclerView.LayoutManager layoutManager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
@@ -31,7 +34,7 @@ public class FragmentSchedule extends Fragment {
         add_schedule = view.findViewById(R.id.add_schedule);
 
         recyclerView = view.findViewById(R.id.recyclerview);
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter((RecyclerView.Adapter) adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
         add_schedule.setOnClickListener(new View.OnClickListener() {
