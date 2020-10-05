@@ -1,6 +1,5 @@
 package com.example.maeily_mobile;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,43 +8,43 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
-    String title[], content[];
-    Context context;
+    private ArrayList<Channel> mList;
 
-    public Adapter(Context ct, String s1[], String s2[]){
-        context = ct;
-        title = s1;
-        content = s2;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        protected TextView title;
+        protected TextView content;
+
+        public MyViewHolder(View view) {
+            super(view);
+            this.title = (TextView) view.findViewById(R.id.channel_title_rcv);
+            this.content = (TextView) view.findViewById(R.id.channel_content_rcv);
+        }
     }
 
-    @NonNull
-    @Override
-    public Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.recyclerviewitem,parent,false);
-        return new MyViewHolder(view);
+    public void MyAdapter(ArrayList<Channel> list) {
+        this.mList = list;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Adapter.MyViewHolder holder, int position) {
-        holder.channel_title_rcv.setText(title[position]);
-        holder.channel_content_rcv.setText(title[position]);
+    public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+
+        View view = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.recyclerviewitem, viewGroup, false);
+        MyViewHolder viewHolder = new MyViewHolder(view);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MyViewHolder viewholder, int position) {
+        viewholder.title.setText(mList.get(position).getContent());
+        viewholder.content.setText(mList.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return title.length;
-    }
-
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        TextView channel_title_rcv;
-        TextView channel_content_rcv;
-        public MyViewHolder(@NonNull View itemView) {
-            super(itemView);
-            channel_title_rcv = itemView.findViewById(R.id.channel_title_rcv);
-            channel_content_rcv = itemView.findViewById(R.id.channel_content_rcv);
-        }
+        return (null != mList ? mList.size() : 0);
     }
 }

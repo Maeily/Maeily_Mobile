@@ -14,6 +14,7 @@ import com.example.maeily_mobile.R;
 
 public class AddFragment extends Fragment {
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
