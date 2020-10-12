@@ -13,12 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
+import com.example.maeily_mobile.Channel;
 import com.example.maeily_mobile.MyAdapter;
 import com.example.maeily_mobile.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -27,23 +25,24 @@ public class ScheduleFragment extends Fragment {
     Button add_schedule;
     RecyclerView recyclerView;
     MyAdapter adapter;
-    ArrayList arrayList;
     String title;
     String content;
-    TextView textView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_schedule, container, false);
         add_schedule = view.findViewById(R.id.add_schedule);
-        /*adapter = new MyAdapter(arrayList);*/
+        ArrayList<Channel> channelList = new ArrayList<>();
 
         if (getArguments() != null) {
             title = getArguments().getString("title1");
             content = getArguments().getString("content1");
             Log.e("title", title);
             Log.e("content", content);
+            Channel channel = new Channel(title, content);
+            channelList.add(channel);
         }
+        adapter = new MyAdapter(channelList);
 
         recyclerView = view.findViewById(R.id.recyclerview);
         recyclerView.setHasFixedSize(true);

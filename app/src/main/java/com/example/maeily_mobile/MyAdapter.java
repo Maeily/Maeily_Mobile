@@ -13,9 +13,6 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private ArrayList<Channel> mList;
 
-    public MyAdapter(ArrayList<android.se.omapi.Channel> mList) {
-    }
-
     public class MyViewHolder extends RecyclerView.ViewHolder {
         protected TextView title;
         protected TextView content;
@@ -27,7 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         }
     }
 
-    public void MyAdapter(ArrayList<Channel> list) {
+    public MyAdapter(ArrayList<Channel> list) {
         this.mList = list;
     }
 
