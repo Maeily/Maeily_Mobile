@@ -10,8 +10,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private ArrayList<Channel> mList;
+
+    public MyAdapter(ArrayList<android.se.omapi.Channel> mList) {
+    }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         protected TextView title;
