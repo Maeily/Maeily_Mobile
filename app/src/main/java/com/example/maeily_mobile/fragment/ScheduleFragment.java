@@ -1,10 +1,10 @@
 package com.example.maeily_mobile.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.maeily_mobile.AddActivity;
 import com.example.maeily_mobile.Channel;
 import com.example.maeily_mobile.MyAdapter;
 import com.example.maeily_mobile.R;
@@ -27,37 +28,40 @@ public class ScheduleFragment extends Fragment {
     MyAdapter adapter;
     String title;
     String content;
+    ArrayList<Channel> channelList = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @NonNull ViewGroup container, @NonNull Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_schedule, container, false);
         add_schedule = view.findViewById(R.id.add_schedule);
-        ArrayList<Channel> channelList = new ArrayList<>();
+        recyclerView = view.findViewById(R.id.recyclerview);
 
+        add_schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), AddActivity.class);
+                startActivity(intent);
+            }
+        });
+        return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         if (getArguments() != null) {
             title = getArguments().getString("title1");
             content = getArguments().getString("content1");
             Log.e("title", title);
             Log.e("content", content);
-            Channel channel = new Channel(title, content);
+            Channel channel = new Channel(content, title);
             channelList.add(channel);
         }
-        adapter = new MyAdapter(channelList);
 
-        recyclerView = view.findViewById(R.id.recyclerview);
-        recyclerView.setHasFixedSize(true);
+        adapter = new MyAdapter(getActivity(), channelList);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(adapter);
-
-        add_schedule.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                AddFragment Addfragment = new AddFragment();
-                transaction.replace(R.id.frameLayout, Addfragment);
-                transaction.commit();
-            }
-        });
-        return view;
+        adapter.notifyDataSetChanged();
     }
+
 }

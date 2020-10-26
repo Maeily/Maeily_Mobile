@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.AddFragment">
+    tools:context=".AddActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,7 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="채널 일정"
+                android:text="채널 설명"
                 android:textSize="24sp"
                 android:textStyle="bold">
 
@@ -57,7 +58,7 @@
                 android:id="@+id/channel_content_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="채널 일정을 적어주세요">
+                android:hint="채널 설명을 적어주세요">
 
             </EditText>
 
@@ -86,6 +87,27 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/colorpick"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:onClick="pickColor">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="색상을 선택하세요"
+                    android:layout_gravity="center">
+
+                </TextView>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
         <Button
             android:id="@+id/add_button"
             android:layout_width="match_parent"
@@ -95,4 +117,4 @@
 
     </LinearLayout>
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

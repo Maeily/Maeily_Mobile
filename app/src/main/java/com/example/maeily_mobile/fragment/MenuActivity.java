@@ -28,7 +28,6 @@ public class MenuActivity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
-
     }
 
     private class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {

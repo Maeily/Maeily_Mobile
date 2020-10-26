@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -21,10 +22,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             super(view);
             this.title = (TextView) view.findViewById(R.id.channel_title_rcv);
             this.content = (TextView) view.findViewById(R.id.channel_content_rcv);
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                }
+            });
         }
     }
 
-    public MyAdapter(ArrayList<Channel> list) {
+    public MyAdapter(FragmentActivity activity, ArrayList<Channel> list) {
         this.mList = list;
     }
 
