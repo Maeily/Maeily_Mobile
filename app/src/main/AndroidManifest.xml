@@ -3,6 +3,8 @@
     package="com.example.maeily_mobile">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -12,10 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AddActivity"></activity>
-        <activity android:name=".sign_up.SignupActivity" />
-        <activity android:name=".fragment.MenuActivity" />
-        <activity android:name=".sign_up.MainActivity">
+        <activity android:name=".activity.ChannelInfoActivity"></activity>
+        <activity android:name=".activity.AddActivity" />
+        <activity android:name=".activity.SignupActivity" />
+        <activity android:name=".activity.MenuActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

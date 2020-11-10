@@ -1,4 +1,4 @@
-package com.example.maeily_mobile;
+package com.example.maeily_mobile.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.maeily_mobile.R;
 import com.example.maeily_mobile.fragment.ScheduleFragment;
 
 import petrov.kristiyan.colorpicker.ColorPicker;
@@ -26,7 +27,7 @@ public class AddActivity extends AppCompatActivity {
 
         et_title = findViewById(R.id.channel_title_et);
         et_content = findViewById(R.id.channel_content_et);
-        add_button = findViewById(R.id.add_button);
+        add_button = findViewById(R.id.add_schedule);
         colorView = findViewById(R.id.colorpick);
 
         add_button.setOnClickListener(new View.OnClickListener() {

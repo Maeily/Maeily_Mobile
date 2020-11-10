@@ -1,4 +1,4 @@
-package com.example.maeily_mobile.sign_up;
+package com.example.maeily_mobile.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

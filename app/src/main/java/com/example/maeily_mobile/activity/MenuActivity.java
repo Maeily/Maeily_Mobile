@@ -1,4 +1,4 @@
-package com.example.maeily_mobile.fragment;
+package com.example.maeily_mobile.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.maeily_mobile.R;
+import com.example.maeily_mobile.fragment.HomeFragment;
+import com.example.maeily_mobile.fragment.ProfileFragment;
+import com.example.maeily_mobile.fragment.ScheduleFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MenuActivity extends AppCompatActivity {

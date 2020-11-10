@@ -12,18 +12,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
-import com.example.maeily_mobile.AddActivity;
-import com.example.maeily_mobile.Channel;
+import com.example.maeily_mobile.activity.AddActivity;
+import com.example.maeily_mobile.model.Channel;
 import com.example.maeily_mobile.MyAdapter;
 import com.example.maeily_mobile.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 public class ScheduleFragment extends Fragment {
     View view;
-    Button add_schedule;
+    FloatingActionButton add_schedule;
     RecyclerView recyclerView;
     MyAdapter adapter;
     String title;

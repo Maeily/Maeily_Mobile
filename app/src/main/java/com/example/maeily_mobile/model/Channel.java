@@ -1,14 +1,14 @@
-package com.example.maeily_mobile;
+package com.example.maeily_mobile.model;
 
 public class Channel {
-    String title;
-    String content;
+    private String title;
+    private String content;
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    void setTitle(String title) {
         this.title = title;
     }
 
@@ -16,7 +16,7 @@ public class Channel {
         return content;
     }
 
-    public void setContent(String content) {
+    void setContent(String content) {
         this.content = content;
     }
 
